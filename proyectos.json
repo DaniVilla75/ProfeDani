@@ -21,7 +21,7 @@
   },
   {
     "titulo": "🧩 Programar",
-    "url": "/pilasbloques/index.html",
+    "url": /pilasbloques/index.html,
     "categoria": "Programación"
   },
   {
@@ -60,6 +60,7 @@
     "categoria": "Instalador Redes"
   }
 ]
+
 
 
 
