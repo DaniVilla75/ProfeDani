@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clase 5 - Condicionales y Sensores</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f8f8;
+      color: #333;
+    }
+    header, footer {
+      background-color: #1976d2;
+      color: white;
+      padding: 1em;
+      text-align: center;
+    }
+    .container {
+      max-width: 960px;
+      margin: auto;
+      padding: 2em;
+      background: white;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    h1{
+      color: #e5ecf3;
+    }
+    h2, h3 {
+      color: #1976d2;
+    }
+    ul {
+      padding-left: 1.5em;
+    }
+    pre {
+      background: #eeeeee;
+      padding: 1em;
+      border-radius: 5px;
+      white-space: pre-wrap;
+    }
+    .actividad {
+      background: #e3f2fd;
+      padding: 1em;
+      border-radius: 8px;
+      margin-top: 1em;
+    }
+    .tabla-definiciones {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 2em;
+    }
+    .tabla-definiciones th, .tabla-definiciones td {
+      border: 1px solid #ccc;
+      padding: 0.75em;
+      text-align: left;
+    }
+    .tabla-definiciones th {
+      background-color: #1976d2;
+      color: white;
+    }
+    .btn-floating {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #43a047;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      font-size: 1.5em;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+      z-index: 1000;
+    }
+    .btn-floating:hover {
+      background-color: #2e7d32;
+    }
+    .nav-buttons {
+      text-align: center;
+      margin: 2em 0 1em;
+    }
+    .nav-buttons button {
+      background-color: #1976d2;
+      color: white;
+      border: none;
+      padding: 0.75em 1.5em;
+      margin: 0.5em;
+      font-size: 1em;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .nav-buttons button:hover {
+      background-color: #0d47a1;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Clase 5 - Condicionales y Sensores</h1>
+  </header>
+
+  <main class="container">
+    <section>
+      <h2>Alternativa condicional</h2>
+      <p>Permite que el programa tome decisiones según lo que detecta en el entorno.</p>
+      <p><strong>Sintaxis didáctica:</strong></p>
+      <pre>SI (condición) ENTONCES { ... } SINO { ... }</pre>
+      <p>Esto permite adaptar el comportamiento del autómata según lo que encuentra.</p>
+
+      <p><strong>Ejemplos de sensores:</strong></p>
+      <ul>
+        <li><code>¿Hay algo acá?</code></li>
+        <li><code>¿Puedo mover a la derecha?</code></li>
+      </ul>
+
+      <h3>Definiciones clave</h3>
+      <table class="tabla-definiciones">
+        <thead>
+          <tr>
+            <th>Concepto</th>
+            <th>Definición pedagógica</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Condición</td>
+            <td>Es una afirmación que puede ser verdadera o falsa según una situación concreta.</td>
+          </tr>
+          <tr>
+            <td>Alternativa condicional</td>
+            <td>Estructura que permite al programa tomar decisiones según el estado del entorno.</td>
+          </tr>
+          <tr>
+            <td>Sensor (en programación)</td>
+            <td>Elemento que detecta información del entorno, como “¿hay fruta?”, “¿puedo avanzar?”</td>
+          </tr>
+          <tr>
+            <td>Bloque condicional</td>
+            <td>Conjunto de instrucciones que se ejecutan solo si la condición se cumple.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="actividad">
+      <h2>Actividad con PilasBloques</h2>            
+      <h3>Nivel Principiante</h3>
+      <p><strong>Misión:</strong> Realiza los desafios de alternativa condicional hasta el 3.</p>
+      <p class="d-inline-flex gap-1">
+        <a href="https://pilasbloques.program.ar/online/#/desafio/242" class="btn btn-outline-danger" role="button" data-bs-toggle="button">Sólo en ciertas ocasiones</a>
+        <a href="https://pilasbloques.program.ar/online/#/desafio/245" class="btn btn-outline-secondary" role="button" data-bs-toggle="button">¿Y si no?</a>
+        <a href="https://pilasbloques.program.ar/online/#/desafio/248" class="btn btn-outline-primary" role="button" data-bs-toggle="button">Más churrascos y ensaladas</a>
+      </p> 
+      
+      <h3>Nivel Intermedio</h3>
+      <p><strong>Misión:</strong> Realiza estos desafíos de alternativa condicional.</p>
+      <p class="d-inline-flex gap-1">
+        <a href="https://pilasbloques.program.ar/online/#/desafio/1013" class="btn btn-outline-success" role="button" data-bs-toggle="button">La pelota indecisa</a>
+        <a href="https://pilasbloques.program.ar/online/#/desafio/1016" class="btn btn-outline-warning" role="button" data-bs-toggle="button">Alineando telescopios</a>
+        <a href="https://pilasbloques.program.ar/online/#/desafio/1045" class="btn btn-outline-info" role="button" data-bs-toggle="button">Mariposas</a>
+      </p> 
+    </section>    
+
+    <section>
+      <h2>Actividad complementaria: El autómata y el dado</h2>
+      <p>Se trabaja con estructuras de repetición y condición.</p>
+
+      <p><strong>Ejercicio:</strong> Tirar el dado 5 veces. Si sale 6, tomar un caramelo.</p>
+
+      <div style="background-color: #1e1e1e; color: #00ff00; font-family: 'Courier New', monospace; padding: 16px; border-radius: 8px;">
+        <strong>Pseudocódigo:</strong><br>
+        Repetir 5 veces {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;Tirar dado<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;Si (cara superior es 6) entonces {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Agarrar caramelo<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        }<br><br>
+
+        <strong>Python:</strong><br>
+        for i in range(5):<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;resultado = tirar_dado()<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;if resultado == 6:<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;agarrar_caramelo()<br><br>
+
+        <strong>JavaScript:</strong><br>
+        for (let i = 0; i &lt; 5; i++) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;let resultado = tirarDado();<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;if (resultado === 6) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;agarrarCaramelo();<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        }
+      </div>         
+    </section>
+
+    <section class="actividad">
+      <h2>🧭 Actividad: Con sensores espaciales</h2>
+      <p>El autómata debe elegir su camino según sensores como:</p>
+      <ul>
+        <li><code>¿Puedo mover a la derecha?</code></li>
+        <li><code>¿Puedo mover abajo?</code></li>
+        <li><code>Distancia recorrida</code></li>
+      </ul>
+
+      <h3>Nivel Avanzado</h3>
+      <p><strong>Misión:</strong> Realiza estos desafíos de alternativa condicional.</p>
+      <p class="d-inline-flex gap-1">
+        <a href="https://pilasbloques.program.ar/online/#/desafio/1026" class="btn btn-danger" role="button" data-bs-toggle="button">¡A correr!</a>
+        <a href="https://pilasbloques.program.ar/online/#/desafio/1027" class="btn btn-warning" role="button" data-bs-toggle="button">Mañic cuenta de nuevo</a>
+      </p>      
+    </section>
+
+    <section>
+      <h2>Cierre reflexivo</h2>
+      <ul>
+        <li>¿Qué aporta el uso de condiciones a nuestros programas?</li>
+        <li>¿Por qué es útil que el autómata verifique antes de actuar?</li>
+        <li>¿En qué otros contextos te parece útil esta lógica?</li>
+      </ul>
+    </section>
+
+    <div class="nav-buttons">
+      <button onclick="location.href='clase4.html'">👈 Anterior clase</button>
+      <button onclick="location.href='index.html'">🏠 Inicio</button>
+      <button onclick="location.href='clase6.html'">Siguiente clase 👉</button>      
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Clase de Programación - Prof. Daniel</p>
+  </footer>
+
+  <button class="btn-floating" onclick="window.open('https://pilasbloques.program.ar/', '_blank')" title="Ir a PilasBloques">🪫</button>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clase 6 - Repetición Condicional II</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f8f8;
+      color: #333;
+    }
+    header, footer {
+      background-color: #1976d2;
+      color: white;
+      padding: 1em;
+      text-align: center;
+    }
+    .container {
+      max-width: 960px;
+      margin: auto;
+      padding: 2em;
+      background: white;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    h1{
+      color: #e5ecf3;
+    }
+    h2, h3 {
+      color: #1976d2;
+    }
+    ul {
+      padding-left: 1.5em;
+    }
+    pre {
+      background: #eeeeee;
+      padding: 1em;
+      border-radius: 5px;
+      white-space: pre-wrap;
+    }
+    .actividad {
+      background: #e3f2fd;
+      padding: 1em;
+      border-radius: 8px;
+      margin-top: 1em;
+    }
+    .tabla-definiciones {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 2em;
+    }
+    .tabla-definiciones th, .tabla-definiciones td {
+      border: 1px solid #ccc;
+      padding: 0.75em;
+      text-align: left;
+    }
+    .tabla-definiciones th {
+      background-color: #1976d2;
+      color: white;
+    }
+    .btn-floating {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #43a047;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      font-size: 1.5em;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+      z-index: 1000;
+    }
+    .btn-floating:hover {
+      background-color: #2e7d32;
+    }
+    .nav-buttons {
+      text-align: center;
+      margin: 2em 0 1em;
+    }
+    .nav-buttons button {
+      background-color: #1976d2;
+      color: white;
+      border: none;
+      padding: 0.75em 1.5em;
+      margin: 0.5em;
+      font-size: 1em;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .nav-buttons button:hover {
+      background-color: #0d47a1;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Clase 6 - Repetición Condicional (Segunda Parte)</h1>
+  </header>
+
+  <main class="container">
+    <section>
+      <h2>Objetivos</h2>
+      <ul>
+        <li>Profundizar en el uso de la repetición condicional.</li>
+        <li>Utilizar sensores para recorrer escenarios con variabilidad.</li>
+        <li>Dividir problemas en subtareas y evaluar estrategias.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Estructuras de repetición trabajadas</h2>
+      <ul>
+        <li><strong>Repetición simple:</strong> ejecutar acciones una cantidad fija de veces (<code>Repetir n veces</code>).</li>
+        <li><strong>Repetición condicional:</strong> continuar ejecutando hasta que se cumpla una condición (<code>Repetir hasta que...</code>).</li>
+      </ul>
+      <p>Estas estructuras se introducen en escenarios progresivos:</p>
+      <ul>
+        <li>Contar frutas en columnas de longitud desconocida.</li>
+        <li>Recorrer distancias usando un sensor de kilómetros.</li>
+        <li>Trabajar con columnas de longitud conocida.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Actividades en Pilas Bloques</h2>      
+
+      <div class="actividad">
+        <h3>Nivel Principiante</h3>
+        <p><strong>Misión:</strong> Realiza estos desafíos de alternativa condicional.</p>
+        <p class="d-inline-flex gap-1">
+          <a href="https://pilasbloques.program.ar/online/#/desafio/2021301" class="btn btn-success" role="button" data-bs-toggle="button">Con Toto 9 desafíos</a>
+          <a href="https://pilasbloques.program.ar/online/#/desafio/2021101" class="btn btn-primary" role="button" data-bs-toggle="button">Con Lita 8 desafíos</a>
+          <a href="https://pilasbloques.program.ar/online/#/desafio/255" class="btn btn-dark" role="button" data-bs-toggle="button">¡Coty dibuja libre!</a>
+        </p>
+        
+        <h3>Nivel Intermedio</h3>
+        <p><strong>Misión:</strong> Realiza estos desafíos de alternativa condicional.</p>
+        <p class="d-inline-flex gap-1">
+          <a href="https://pilasbloques.program.ar/online/#/desafio/1024" class="btn btn-secondary" role="button" data-bs-toggle="button">Prendiendo las compus</a>
+          <a href="https://pilasbloques.program.ar/online/#/desafio/1021" class="btn btn-warning" role="button" data-bs-toggle="button">Laberinto con pelotas</a>
+          <a href="https://pilasbloques.program.ar/online/#/desafio/1025" class="btn btn-info" role="button" data-bs-toggle="button">Contando astros</a>
+        </p>
+
+        <h3>Nivel Experto</h3>
+        <p><strong>Misión:</strong> Crea tu propio escenario con todo lo aprendido.</p>
+        <p class="d-inline-flex gap-1">
+          <a href="https://pilasbloques.program.ar/online/#/creador/seleccionar" class="btn btn-danger" role="button" data-bs-toggle="button">Creá tu desafío</a>
+        </p>
+      </div>
+    </section> 
+    <br>     
+    <section>      
+      <h2>Definiciones clave</h2>
+      <table class="tabla-definiciones">
+        <thead>
+          <tr>
+            <th>Concepto</th>
+            <th>Definición pedagógica</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Alternativa condicional</td>
+            <td>Toma de decisiones según lo que detecta en el entorno.</td>
+          </tr>
+          <tr>
+            <td>Mis procedimientos</td>
+            <td>Agrupación de secuencias bajo una sola acción (modularidad).</td>
+          </tr>
+          <tr>
+            <td>Primitivas</td>
+            <td>Comandos básicos como “Mover abajo”, “Contar si hay”.</td>
+          </tr>
+          <tr>
+            <td>Repetición simple</td>
+            <td>Ejecutar una secuencia una cantidad fija de veces.</td>
+          </tr>
+          <tr>
+            <td>Repetición condicional</td>
+            <td>Repetir (bucle) instrucciones hasta que se cumpla una condición.</td>
+          </tr>
+          <tr>
+            <td>Sensor</td>
+            <td>Elemento que brinda información del entorno, como longitud o presencia de objetos.</td>
+          </tr>
+          <tr>
+            <td>Subtarea</td>
+            <td>Parte más simple de un problema complejo, útil para resolverlo paso a paso.</td>
+          </tr>
+          <tr>
+            <td>Variables</td>
+            <td>Aparecen implícitamente en “Bananas: 0”, “Manzanas: 0”, lo que permite introducir la idea de contar y guardar información.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>   
+    <br>
+
+    <section>
+      <h2>Cierre reflexivo</h2>
+      <ul>
+        <li>¿Por qué es útil usar repetición condicional frente a escenarios desconocidos?</li>
+        <li>¿Qué ventajas aporta dividir en subtareas?</li>
+        <li>¿Cómo cambia tu estrategia si disponés de sensores más precisos?</li>
+      </ul>
+    </section>
+
+    <div class="nav-buttons">
+      <button onclick="location.href='clase5.html'">👈 Anterior clase</button>
+      <button onclick="location.href='index.html'">🏠 Inicio</button>           
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Clase de Programación - Prof. Daniel</p>
+  </footer>
+
+  <button class="btn-floating" onclick="window.open('https://pilasbloques.program.ar/', '_blank')" title="Ir a PilasBloques">🪫</button>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+
+</html>

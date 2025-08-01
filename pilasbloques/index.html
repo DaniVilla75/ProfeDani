@@ -1,0 +1,252 @@
+<script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                // Convert sheet to JSON to filter blank rows
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                // Fallback
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                // Convert filtered JSON back to CSV
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de Programación</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Estilos personalizados */
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #1a202c, #2d3748);
+            color: #e2e8f0;
+        }
+        .navbar {
+            transition: all 0.3s ease;
+        }
+        .navbar.scrolled {
+            background-color: rgba(26, 32, 44, 0.95);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.6s forwards;
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @media (max-width: 640px) {
+            .nav-links {
+                display: none;
+            }
+            .nav-links.active {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 64px;
+                left: 0;
+                right: 0;
+                background-color: #1a202c;
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar fixed w-full top-0 z-50 py-4 px-6">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-white">Curso de Programación</a>
+            <div class="nav-links flex space-x-6">
+                <a href="#home" class="text-gray-300 hover:text-white transition">Inicio</a>
+                <a href="#clases" class="text-gray-300 hover:text-white transition">Clases</a>
+                <a href="#contacto" class="text-gray-300 hover:text-white transition">Contacto</a>
+            </div>
+            <button class="menu-toggle md:hidden text-white">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center px-6">
+        <div class="text-center fade-in">
+            <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-4">
+                Aprende a Programar
+            </h1>
+            <p class="text-lg md:text-xl text-gray-300 mb-6">
+                Domina las habilidades del futuro con nuestro curso interactivo y práctico.
+            </p>
+            <a href="#clases" class="bg-indigo-600 text-white px-6 py-3 rounded-full hover:bg-indigo-700 transition">
+                Ver Clases
+            </a>
+        </div>
+    </section>
+
+    <!-- Clases Section -->
+    <section id="clases" class="py-20 px-6 bg-gray-900">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-bold text-center text-white mb-12 fade-in">Nuestras Clases</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Clase 1 -->
+                <div class="card bg-gray-800 p-6 rounded-lg fade-in">
+                    <svg class="w-12 h-12 text-indigo-500 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                    </svg>
+                    <h3 class="text-xl font-semibold text-white mb-2">Clase 1</h3>
+                    <p class="text-gray-400 mb-4">Introduccion a programación</p>
+                    <a href="clase1.html" class="text-indigo-500 hover:text-indigo-400">Ver Clase →</a>
+                </div>
+                <!-- Clase 2 -->
+                <div class="card bg-gray-800 p-6 rounded-lg fade-in">
+                    <svg class="w-12 h-12 text-indigo-500 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-1.657 1.657"></path>
+                    </svg>
+                    <h3 class="text-xl font-semibold text-white mb-2">Clase 2</h3>
+                    <p class="text-gray-400 mb-4">Secuencias y Primitivas</p>
+                    <a href="clase2.html" class="text-indigo-500 hover:text-indigo-400">Ver Clase →</a>
+                </div>
+                <!-- Clase 3 -->
+                <div class="card bg-gray-800 p-6 rounded-lg fade-in">
+                    <svg class="w-12 h-12 text-indigo-500 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"></path>
+                    </svg>
+                    <h3 class="text-xl font-semibold text-white mb-2">Clase 3</h3>
+                    <p class="text-gray-400 mb-4">Repetición y Procedimientos</p>
+                    <a href="clase3.html" class="text-indigo-500 hover:text-indigo-400">Ver Clase →</a>
+                </div>
+                <!-- Clase 4 -->
+                <div class="card bg-gray-800 p-6 rounded-lg fade-in">
+                    <svg class="w-12 h-12 text-indigo-500 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path>
+                    </svg>
+                    <h3 class="text-xl font-semibold text-white mb-2">Clase 4</h3>
+                    <p class="text-gray-400 mb-4">Procedimientos con Parámetros y Modularidad</p>
+                    <a href="clase4.html" class="text-indigo-500 hover:text-indigo-400">Ver Clase →</a>
+                </div>
+                <!-- Clase 5 -->
+                <div class="card bg-gray-800 p-6 rounded-lg fade-in">
+                    <svg class="w-12 h-12 text-indigo-500 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h7m-7 0v7m0-7v-7m7 7h7m0 0v7m0-7v-7m-7 0v7"></path>
+                    </svg>
+                    <h3 class="text-xl font-semibold text-white mb-2">Clase 5</h3>
+                    <p class="text-gray-400 mb-4">Condicionales y Sensores</p>
+                    <a href="clase5.html" class="text-indigo-500 hover:text-indigo-400">Ver Clase →</a>
+                </div>
+                <!-- Clase 6 -->
+                <div class="card bg-gray-800 p-6 rounded-lg fade-in">
+                    <svg class="w-12 h-12 text-indigo-500 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"></path>
+                    </svg>
+                    <h3 class="text-xl font-semibold text-white mb-2">Clase 6</h3>
+                    <p class="text-gray-400 mb-4">Repetición Condicional</p>
+                    <a href="clase6.html" class="text-indigo-500 hover:text-indigo-400">Ver Clase →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto Section -->
+    <section id="contacto" class="py-20 px-6">
+        <div class="container mx-auto text-center">
+            <h2 class="text-4xl font-bold text-white mb-6 fade-in">Contáctanos</h2>
+            <p class="text-gray-300 mb-8 fade-in">¿Tienes alguna duda? Enviame un mail</p>
+            <div class="flex justify-center space-x-4">
+                <a href="#" class="text-gray-300 hover:text-white transition">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.86-7-7.93s3.06-7.44 7-7.93v15.86zm2 0V4.07c3.94.49 7 3.86 7 7.93s-3.06 7.44-7 7.93z"></path>
+                    </svg>
+                </a>
+                <a href="#" class="text-gray-300 hover:text-white transition">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10h5v-2h-5c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8v1.5c0 .83-.67 1.5-1.5 1.5s-1.5-.67-1.5-1.5V12c0-3.31-2.69-6-6-6s-6 2.69-6 6 2.69 6 6 6c1.66 0 3.1-.67 4.22-1.78.36.56.92.95 1.58.95.99 0 1.8-.81 1.8-1.8v-1.5c0-4.41-3.59-8-8-8z"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-6 bg-gray-900 text-center text-gray-400">
+        <p>&copy; 2025 ☢️ Profesor Daniel Villarruel ☢️ Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Fade-in animations on scroll
+        const fadeInElements = document.querySelectorAll('.fade-in');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationDelay = `${entry.target.dataset.delay || 0}s`;
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, { threshold: 0.2 });
+
+        fadeInElements.forEach((el, index) => {
+            el.dataset.delay = index * 0.2;
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

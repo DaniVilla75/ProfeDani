@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clase 4 - Procedimientos con Parámetros y Modularidad</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f8f8;
+      color: #333;
+    }
+    header, footer {
+      background-color: #1976d2;
+      color: white;
+      padding: 1em;
+      text-align: center;
+    }
+    .container {
+      max-width: 960px;
+      margin: auto;
+      padding: 2em;
+      background: white;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    h1{
+      color: #e5ecf3;
+    }
+    h2, h3 {
+      color: #1976d2;
+    }
+    ul {
+      padding-left: 1.5em;
+    }
+    .actividad {
+      background: #e3f2fd;
+      padding: 1em;
+      border-radius: 8px;
+      margin-top: 1em;
+    }
+    .btn-floating {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #43a047;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      font-size: 1.5em;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+      z-index: 1000;
+    }
+    .btn-floating:hover {
+      background-color: #2e7d32;
+    }
+    .nav-buttons {
+      text-align: center;
+      margin: 2em 0 1em;
+    }
+    .nav-buttons button {
+      background-color: #1976d2;
+      color: white;
+      border: none;
+      padding: 0.75em 1.5em;
+      margin: 0.5em;
+      font-size: 1em;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .nav-buttons button:hover {
+      background-color: #0d47a1;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Clase 4 - Procedimientos con Parámetros y Modularidad</h1>
+  </header>
+
+  <main class="container">
+    <section>
+      <h2>Objetivos</h2>
+      <ul>
+        <li>Comprender qué es un procedimiento con parámetro.</li>
+        <li>Diseñar soluciones más generales y reutilizables.</li>
+        <li>Fomentar la modularidad del código.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Teoría y desarrollo</h2>
+
+      <h3>¿Qué es un parámetro?</h3>
+      <p>Un <strong>parámetro</strong> es un valor que se pasa a un procedimiento para que actúe según diferentes situaciones.</p>
+
+      <p><em>Ejemplo:</em></p>
+      <pre>
+        Procedimiento Dibujar línea (n):
+        Repetir n veces:
+        Avanzar
+        Pintar
+      </pre>
+      <p>Con este procedimiento podés hacer líneas de diferentes largos usando el mismo bloque.</p>
+
+      <h3>🛸 Lightbot y el concepto de “procedimientos”</h3>
+      <p>Un procedimiento en Lightbot es como guardar un grupo de acciones que se repiten en una caja con un nombre. Por ejemplo, si siempre haces "avanzar, girar, saltar", puedes encapsular eso en un procedimiento y usarlo cuando quieras. Esto hace tu código más corto, claro y organizado, ¡como seguir una receta para no repetir pasos!</p>
+
+      <h3>¿Qué es modularidad?</h3>
+      <p>La <strong>modularidad</strong> es dividir un problema en partes pequeñas que se pueden resolver con procedimientos. Hace el código más claro y ordenado.</p>
+    </section>
+
+    <section class="actividad">
+      <h2>Actividad con PilasBloques</h2>
+
+      <h3>Nivel Principiante</h3>
+      <p><strong>Misión:</strong> Completar hasta el desafío 3.</p>      
+      <p class="d-inline-flex gap-1">
+        <a href="https://pilasbloques.program.ar/online/#/desafio/236" class="btn btn-outline-warning" role="button" data-bs-toggle="button">Corregimos los programas</a>
+      </p>
+
+      <h3>Nivel Intermedio</h3>
+      <p><strong>Misión:</strong> Recolectar las latas.</p>
+      <p><strong>Recurso:</strong> Crear procedimientos programado con <code>primitivas</code> y repetirlos.</p>
+      <p class="d-inline-flex gap-1">
+        <a href="https://pilasbloques.program.ar/online/#/desafio/1046" class="btn btn-outline-info" role="button" data-bs-toggle="button">Capy</a>
+      </p>
+      
+      <p><strong>Preguntas guía:</strong></p>
+      <ul>
+        <li>¿Qué cambia y qué se repite en tu solución?</li>
+        <li>¿Cómo te ayudó usar parámetros?</li>
+        <li>¿Qué ventajas tiene escribir bloques reutilizables?</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Cierre reflexivo</h2>
+      <ul>
+        <li>¿Qué aprendiste hoy sobre los parámetros?</li>
+        <li>¿Cómo mejora la modularidad tu forma de programar?</li>
+        <li>¿Te animás a armar tus propias funciones reutilizables?</li>
+      </ul>
+    </section>
+
+    <div class="nav-buttons">
+      <button onclick="location.href='clase3.html'">👈 Anterior clase</button>
+      <button onclick="location.href='index.html'">🏠 Inicio</button>
+      <button onclick="location.href='clase5.html'">Siguiente clase 👉</button>      
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Clase de Programación - Prof. Daniel</p>
+  </footer>
+
+  <button class="btn-floating" onclick="window.open('https://pilasbloques.program.ar/', '_blank')" title="Ir a PilasBloques">🪫</button>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+
+</html>
