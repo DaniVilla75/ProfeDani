@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windows 11 Simulator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Pantalla de bloqueo -->
+    <div class="lockscreen" id="lockscreen">
+        <div class="lock-content">
+            <div class="lock-time" id="lock-time">12:30</div>
+            <div class="lock-date" id="lock-date">Sábado, 2 de agosto</div>
+            <div class="lock-hint">Haz clic para desbloquear</div>
+        </div>
+    </div>
+
+    <!-- Escritorio -->
+    <div class="desktop" id="desktop">
+        <!-- Iconos se cargan dinámicamente con JS -->
+        <div class="desktop-icons" id="desktop-icons"></div>
+
+        <!-- Barra de tareas -->
+        <div class="taskbar">
+            <div class="taskbar-left">
+                <button class="taskbar-icon" id="start-btn">
+                    <i class="fab fa-windows"></i>
+                </button>
+                <div class="search-container">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="global-search" placeholder="Buscar aplicaciones...">
+                    <i class="fas fa-times" style="display: none; cursor: pointer;"></i>
+                </div>                
+                
+            </div>
+            <div class="taskbar-center">
+                <div class="pinned-apps" id="pinned-apps"></div>
+            </div>
+            <div class="taskbar-right">
+                <div class="system-tray">
+                    <span class="tray-icon"><i class="fas fa-wifi"></i></span>
+                    <span class="tray-icon"><i class="fas fa-volume-up"></i></span>
+                    <span class="tray-icon"><i class="fas fa-battery-three-quarters"></i></span>
+                    <span class="tray-time" id="tray-time">12:30 PM</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menú de Inicio -->
+        <div class="start-menu" id="start-menu">
+            <div class="start-header">
+                <input type="text" placeholder="Buscar aplicaciones, configuraciones...">
+            </div>
+            <div class="start-grid" id="start-grid"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
