@@ -9,7 +9,7 @@ const appsData = {
         },
         {
             name: "Binary Code",
-            icon: "/img/binary-code.png",
+            icon: "img/binary-code.png",
             tooltip: "Representación de la Información",
             url: "https://sites.google.com/abc.gob.ar/nticx4vela/inicio"
         },
@@ -21,55 +21,55 @@ const appsData = {
         },
         {
             name: "ERP",
-            icon: "/img/erp.png",
+            icon: "img/erp.png",
             tooltip: "Planificación de recursos empresariales",
             url: "https://danivilla75.github.io/erp25.io/"
         },
         {
             name: "HTML",
-            icon: "/img/html-5.png",
+            icon: "img/html-5.png",
             tooltip: "Programación Web",
             url: "https://danivilla75.github.io/web1/"
         },
         {
             name: "Css",
-            icon: "/img/css.png",
+            icon: "img/css.png",
             tooltip: "Programación Web",
             url: "https://danivilla75.github.io/web1/"
         },
         {
             name: "Javascript",
-            icon: "/img/js.png",
+            icon: "img/js.png",
             tooltip: "Programación Web",
             url: "https://danivilla75.github.io/web1/"
         },
         {
             name: "PilasBloques",
-            icon: "/img/Pilas-Bloques.png",
+            icon: "img/Pilas-Bloques.png",
             tooltip: "Programación con Pilas Bloques",
             url: "https://danivilla75.github.io/pilasbloques/"
         },
         {
             name: "AppInventor",
-            icon: "/img/mit.png",
+            icon: "img/mit.png",
             tooltip: "Programación con App Inventor",
             url: "https://danivilla75.github.io/appinventor/"
         },
         {
             name: "LSA",
-            icon: "/img/lsa.png",
+            icon: "img/lsa.png",
             tooltip: "Lenguaje de Señas Argentina",
             url: "https://danitotdl.github.io/appcaa/"
         },
         {
             name: "Google Site",
-            icon: "/img/google.png",
+            icon: "img/google.png",
             tooltip: "Páginas Web creadas con Google Sites",
             url: "https://sites.google.com/abc.gob.ar/educacioninformticatdl/p%C3%A1gina-principal"
         },
         {
             name: "Redes",
-            icon: "/img/ethernet.png",
+            icon: "img/ethernet.png",
             tooltip: "Curso de FP sobre redes de internet",
             url: "https://sites.google.com/view/cfpn401-bj/p%C3%A1gina-principal"
         }
