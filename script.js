@@ -45,13 +45,13 @@ const appsData = {
         },
         {
             name: "PilasBloques",
-            icon: "img/Pilas-Bloques.png",
+            icon: "https://cdn-icons-png.flaticon.com/128/852/852907.png",
             tooltip: "Programación con Pilas Bloques",
             url: "https://danivilla75.github.io/pilasbloques/"
         },
         {
             name: "AppInventor",
-            icon: "img/mit.png",
+            icon: "https://cdn-icons-png.flaticon.com/128/6785/6785788.png",
             tooltip: "Programación con App Inventor",
             url: "https://danivilla75.github.io/appinventor/"
         },
