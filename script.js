@@ -33,7 +33,7 @@ const appsData = {
         },
         {
             name: "Css",
-            icon: "img/css.png",
+            icon: "https://cdn-icons-png.flaticon.com/128/732/732190.png",
             tooltip: "Programación Web",
             url: "https://danivilla75.github.io/web1/"
         },
