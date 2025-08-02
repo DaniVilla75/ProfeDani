@@ -27,7 +27,7 @@ const appsData = {
         },
         {
             name: "HTML",
-            icon: "./img/html-5.png",
+            icon: "https://cdn-icons-png.flaticon.com/128/732/732212.png",
             tooltip: "Programación Web",
             url: "https://danivilla75.github.io/web1/"
         },
