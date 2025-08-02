@@ -21,10 +21,10 @@
   <a href="https://danivilla75.github.io/erp25.io/" style="text-decoration: none; margin: 5px;">
     <img src="https://img.shields.io/badge/ERP-DC3545?style=for-the-badge" alt="ERP" />
   </a>
-  <a href="#programacion" style="text-decoration: none; margin: 5px;">
+  <a href="https://danivilla75.github.io/pilasbloques/" style="text-decoration: none; margin: 5px;">
     <img src="https://img.shields.io/badge/Programación-8BC34A?style=for-the-badge" alt="Programación" />
   </a>
-  <a href="#app" style="text-decoration: none; margin: 5px;">
+  <a href="https://danivilla75.github.io/appinventor/" style="text-decoration: none; margin: 5px;">
     <img src="https://img.shields.io/badge/AppInventor-FF5722?style=for-the-badge" alt="AppInventor" />
   </a>
   <a href="https://danitotdl.github.io/appcaa/" style="text-decoration: none; margin: 5px;">
