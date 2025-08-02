@@ -33,7 +33,7 @@ const appsData = {
         },
         {
             name: "Css",
-            icon: ".img/css.png",
+            icon: "img/css.png",
             tooltip: "Programación Web",
             url: "https://danivilla75.github.io/web1/"
         },
