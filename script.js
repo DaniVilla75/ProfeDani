@@ -20,6 +20,12 @@ const appsData = {
             url: "https://danivilla75.github.io/planillacalc25/"
         },
         {
+            name: "CANVA",
+            icon: "img/canva.png",
+            tooltip: "Aplicación Web multiplataforma Canva",
+            url: "https://danivilla75.github.io/canva/"
+        },
+        {
             name: "ERP",
             icon: "img/erp.png",
             tooltip: "Planificación de recursos empresariales",
